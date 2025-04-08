@@ -1,1 +1,173 @@
 
+#include<stdio.h>
+
+#define MAX 3
+
+int a[MAX],front,rear;
+
+ 
+
+void init()
+
+{
+
+    front=-1;
+
+    rear=-1;
+
+    printf("\nStatic Queue is initialized\n");
+
+}
+
+ 
+
+void insert()
+
+{
+
+    int number;
+
+    if(rear==MAX-1)
+
+        printf("\nQueue is full\n");
+
+    else
+
+    {
+
+        printf("\nEnter the value:");
+
+        scanf("%d",&number);
+
+        front=0;
+
+        rear=rear+1;
+
+        a[rear]=number; 
+
+        printf("\nValue Enqueued\n");
+
+    }
+
+}
+
+ 
+
+void delete1()
+
+{
+
+    if(front==-1 || rear==front-1)
+
+        printf("\nQueue is empty\n");
+
+    else
+
+    {
+
+        printf("\nDeleted value is %d",a[front]);   
+
+        front=front+1;
+
+    }
+
+} 
+
+void isfull()
+
+{
+
+    if(rear==MAX-1)
+
+        printf("\nQueue is full\n");
+
+    else
+
+        printf("\nQueue is not full");  
+
+}
+
+ 
+
+void isempty()
+
+{
+
+    if(front==-1 || rear==front-1)
+
+        printf("\nQueue is empty\n");
+
+    else
+
+        printf("\nQueue is not empty"); 
+
+}
+
+ 
+
+void peek()
+
+{
+
+    if(front==-1 || rear==front-1)
+
+        printf("\nQueue is empty\n");
+
+    else
+
+        printf("\nValue at front is %d",a[front]);  
+
+} 
+int main()
+
+{
+
+    int ch;
+
+    while(1)
+
+    {
+
+        printf("\n----Static Queue----\n");
+
+        printf("\n1.Init\n");
+
+        printf("2.Insert\n");
+
+        printf("3.Delete\n");
+
+        printf("4.Peek\n");
+
+        printf("5.IsEmpty\n");
+
+        printf("6.IsFull\n");
+
+        printf("7.Exit\n");
+
+        printf("Enter your choice: ");
+
+        scanf("%d",&ch);
+
+        switch(ch)
+
+        {
+
+            case 1:init();  break;
+
+            case 2:insert(); break;
+
+            case 3:delete1(); break;
+
+            case 4:peek(); break;
+
+            case 5:isempty(); break;
+
+            case 6:isfull(); break;
+
+            case 7:exit(0);
+
+        }
+
+    }
+
+}
